@@ -1,0 +1,49 @@
+<div class="confirmation-container" *ngIf="order">
+
+  <div class="confirmation-header">
+    <div class="confirmation-icon">✅</div>
+    <h2>Order Placed Successfully</h2>
+    <p>Thank you for your purchase!</p>
+  </div>
+
+  <div class="confirmation-card">
+    <div class="confirmation-summary">
+      <div class="summary-item">
+        <span class="summary-label">Order ID</span>
+        <span class="summary-value">#{{order.orderId}}</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Payment Method</span>
+        <span class="summary-value">{{order.paymentMethod}}</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Total Amount</span>
+        <span class="summary-value blue">{{order.totalAmount | currency:'INR':'symbol':'1.2-2'}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="confirmation-items">
+    <h3>Items Ordered</h3>
+    <div class="confirmation-item-table">
+      <div class="confirmation-item-row header-row">
+        <span>Product</span>
+        <span>Qty</span>
+        <span>Price</span>
+        <span>Subtotal</span>
+      </div>
+      <div class="confirmation-item-row" *ngFor="let item of order.items">
+        <span class="item-name">{{item.name}}</span>
+        <span class="item-qty">{{item.quantity}}</span>
+        <span class="item-price">{{item.price | currency:'INR':'symbol':'1.2-2'}}</span>
+        <span class="item-subtotal">{{item.quantity * item.price | currency:'INR':'symbol':'1.2-2'}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="confirmation-actions">
+    <button routerLink="/orders">View My Orders</button>
+    <button routerLink="/products" class="continue-btn">Continue Shopping</button>
+  </div>
+
+</div>

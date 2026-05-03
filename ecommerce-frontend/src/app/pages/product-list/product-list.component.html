@@ -1,0 +1,37 @@
+<div class="filter-bar">
+  <input type="text" [(ngModel)]="keyword" placeholder="Search ...">
+  <input type="text" [(ngModel)]="min" placeholder="Min price">
+  <input type="text" [(ngModel)]="max" placeholder="Max price">
+
+  <select [(ngModel)]="selectedTypeId" (change)="onTypeChange()">
+    <option [ngValue]="null" disabled selected>Select Type</option>
+    <option *ngFor="let t of types" [ngValue]="t.id">{{t.name}}</option>
+  </select>
+
+  <select [(ngModel)]="selectedCategoryId" (change)="onCategoryChange()" [disabled]="!selectedTypeId">
+    <option [ngValue]="null" disabled selected>Select Category</option>
+    <option *ngFor="let c of categories" [ngValue]="c.id">{{c.name}}</option>
+  </select>
+
+  <select [(ngModel)]="subCategoryId" [disabled]="!selectedCategoryId">
+    <option [ngValue]="null" disabled selected>Select SubCategory</option>
+    <option *ngFor="let sub of subCategories" [ngValue]="sub.id">{{sub.name}}</option>
+  </select>
+
+  <button (click)="applyFilter()">Apply</button>
+</div>
+
+<div class="product-grid">
+  <div class="product-card" *ngFor="let p of products">
+    <a [routerLink]="['/product', p.id]">
+      <img [src]="p.imageUrl" class="product-image" width="150" height="150">
+    </a>
+    <h3 class="product-title">{{p.name}}</h3>
+  </div>
+</div>
+
+<div class="pagination">
+  <button (click)="prevPage()" [disabled]="page === 1">Previous</button>
+  <span class="page-info">Page {{page}}</span>
+  <button (click)="nextPage()" [disabled]="page >= totalPages">Next</button>
+</div>

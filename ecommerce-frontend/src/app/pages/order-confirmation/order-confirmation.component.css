@@ -1,0 +1,156 @@
+.confirmation-container {
+  max-width: 800px;
+  margin: 36px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.confirmation-header {
+  text-align: center;
+  padding: 36px 20px;
+  background: linear-gradient(135deg, #f8f9ff, #eef1fb);
+  border-radius: 16px;
+  border: 2px solid #c5cae9;
+}
+
+.confirmation-icon {
+  font-size: 52px;
+  margin-bottom: 16px;
+}
+
+.confirmation-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.confirmation-header p {
+  font-size: 15px;
+  color: #8a94a6;
+}
+
+.confirmation-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 24px;
+}
+
+.confirmation-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.summary-label {
+  font-size: 11px;
+  color: #8a94a6;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.summary-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.summary-value.blue {
+  color: #4361ee;
+  font-size: 18px;
+}
+
+.confirmation-items h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+}
+
+.confirmation-item-table {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.confirmation-item-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 130px 130px;
+  align-items: center;
+  padding: 14px 24px;
+  border-bottom: 1px solid #f0f2f5;
+  gap: 12px;
+}
+
+.confirmation-item-row:last-child {
+  border-bottom: none;
+}
+
+.header-row {
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 16px 16px 0 0;
+}
+
+.item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.item-qty {
+  font-size: 14px;
+  color: #5a6478;
+  text-align: center;
+}
+
+.item-price {
+  font-size: 14px;
+  color: #5a6478;
+}
+
+.item-subtotal {
+  font-size: 14px;
+  font-weight: 800;
+  color: #4361ee;
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.confirmation-actions button {
+  padding: 12px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.continue-btn {
+  background-color: white;
+  color: #4361ee;
+  border: 2px solid #4361ee;
+}
+
+.continue-btn:hover {
+  background-color: #f0f2ff;
+  box-shadow: none;
+}

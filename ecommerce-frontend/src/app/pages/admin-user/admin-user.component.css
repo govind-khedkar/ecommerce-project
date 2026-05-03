@@ -1,0 +1,172 @@
+.admin-users-container {
+  max-width: 1100px;
+  margin: 36px auto;
+  padding: 0 20px;
+}
+
+.admin-users-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+.admin-users-table {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.admin-users-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 100px 100px 120px;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f0f2f5;
+  gap: 12px;
+  transition: background-color 0.15s;
+}
+
+.admin-users-row:last-child {
+  border-bottom: none;
+}
+
+.admin-users-row:not(.header-row):hover {
+  background-color: #f8f9ff;
+}
+
+.header-row {
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 16px 16px 0 0;
+  letter-spacing: 0.3px;
+}
+
+.user-id {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4361ee;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.user-email {
+  font-size: 13px;
+  color: #8a94a6;
+}
+
+.user-role {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.user-role.admin {
+  background-color: #e8eaf6;
+  color: #3a0ca3;
+}
+
+.user-role.user {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.user-status {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.user-status.active {
+  background-color: #e9f7ef;
+  color: #196f3d;
+}
+
+.user-status.locked {
+  background-color: #fdedec;
+  color: #cb4335;
+}
+
+.lock-btn {
+  padding: 7px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.1s;
+}
+
+.lock-btn.lock {
+  background-color: #fdedec;
+  color: #cb4335;
+}
+
+.lock-btn.lock:hover {
+  background-color: #e53e3e;
+  color: white;
+  box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+}
+
+.lock-btn.unlock {
+  background-color: #e9f7ef;
+  color: #196f3d;
+}
+
+.lock-btn.unlock:hover {
+  background-color: #38a169;
+  color: white;
+  box-shadow: 0 4px 12px rgba(56, 161, 105, 0.3);
+}
+
+.admin-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: #8a94a6;
+  font-style: italic;
+}
+
+.users-empty {
+  text-align: center;
+  padding: 70px 20px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.users-empty p {
+  font-size: 16px;
+  color: #8a94a6;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .admin-users-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .header-row {
+    display: none;
+  }
+
+  .lock-btn {
+    grid-column: 1 / -1;
+  }
+}

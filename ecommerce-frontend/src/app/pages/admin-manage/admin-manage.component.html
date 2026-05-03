@@ -1,0 +1,69 @@
+<div class="manage-container">
+  <h2 class="manage-title">Manage Categories</h2>
+
+  <div class="manage-grid">
+
+    <div class="manage-card">
+      <div class="manage-card-header">
+        <span class="manage-icon">🏷️</span>
+        <h3>Add Type</h3>
+      </div>
+      <div class="form-group">
+        <label>Type Name</label>
+        <input type="text" [(ngModel)]="typeName" placeholder="Enter type name">
+      </div>
+      <button (click)="addType()">Add Type</button>
+
+      <div class="manage-list" *ngIf="types.length > 0">
+        <h4>Existing Types</h4>
+        <div class="manage-tag" *ngFor="let t of types">{{t.name}}</div>
+      </div>
+    </div>
+
+    <div class="manage-card">
+      <div class="manage-card-header">
+        <span class="manage-icon">📂</span>
+        <h3>Add Category</h3>
+      </div>
+      <div class="form-group">
+        <label>Category Name</label>
+        <input type="text" [(ngModel)]="categoryName" placeholder="Enter category name">
+      </div>
+      <div class="form-group">
+        <label>Select Type</label>
+        <select [(ngModel)]="selectedTypeId">
+          <option [ngValue]="null" disabled selected>Select Type</option>
+          <option *ngFor="let t of types" [ngValue]="t.id">{{t.name}}</option>
+        </select>
+      </div>
+      <button (click)="addCategory()">Add Category</button>
+
+      <div class="manage-list" *ngIf="categories.length > 0">
+        <h4>Existing Categories</h4>
+        <div class="manage-tag" *ngFor="let c of categories">
+          {{c.name}} <span class="manage-tag-sub">{{c.type?.name}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="manage-card">
+      <div class="manage-card-header">
+        <span class="manage-icon">🗂️</span>
+        <h3>Add SubCategory</h3>
+      </div>
+      <div class="form-group">
+        <label>SubCategory Name</label>
+        <input type="text" [(ngModel)]="subCategoryName" placeholder="Enter subcategory name">
+      </div>
+      <div class="form-group">
+        <label>Select Category</label>
+        <select [(ngModel)]="selectedCategoryId">
+          <option [ngValue]="null" disabled selected>Select Category</option>
+          <option *ngFor="let c of categories" [ngValue]="c.id">{{c.name}}</option>
+        </select>
+      </div>
+      <button (click)="addSubCategory()">Add SubCategory</button>
+    </div>
+
+  </div>
+</div>

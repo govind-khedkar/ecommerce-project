@@ -1,0 +1,78 @@
+<div class="hero">
+  <div class="hero-content">
+    <h1>Welcome to GovindCart</h1>
+    <p>Find the best products at the best prices</p>
+    <button routerLink="/products">Shop Now</button>
+  </div>
+</div>
+
+<div class="features">
+  <div class="feature-card">
+    <div class="feature-icon">🚚</div>
+    <h3>Free Delivery</h3>
+    <p>On all orders above ₹499</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🔄</div>
+    <h3>Easy Returns</h3>
+    <p>10 day return policy</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🔒</div>
+    <h3>Secure Payment</h3>
+    <p>100% safe and secure checkout</p>
+  </div>
+  <div class="feature-card">
+    <div class="feature-icon">🎧</div>
+    <h3>24/7 Support</h3>
+    <p>We are always here to help</p>
+  </div>
+</div>
+
+<div class="featured-section">
+  <div class="featured-header">
+    <h2>Featured Products</h2>
+    <a routerLink="/products" class="view-all">View All →</a>
+  </div>
+
+  <div class="featured-grid">
+    <div class="product-card" *ngFor="let p of featuredProducts">
+      <a [routerLink]="['/product', p.id]">
+        <img [src]="p.imageUrl" class="product-image">
+      </a>
+      <h3 class="product-title">{{p.name}}</h3>
+      <p class="product-price">{{p.price | currency:'INR':'symbol':'1.2-2'}}</p>
+      <button routerLink="/products">View</button>
+    </div>
+  </div>
+</div>
+
+<div class="shortcuts">
+  <h2>Browse Categories</h2>
+  <div class="shortcut-grid">
+    <a routerLink="/products" class="shortcut-card">
+      <div class="shortcut-icon">📱</div>
+      <span>Electronics</span>
+    </a>
+    <a routerLink="/products" class="shortcut-card">
+      <div class="shortcut-icon">👗</div>
+      <span>Fashion</span>
+    </a>
+    <a routerLink="/products" class="shortcut-card">
+      <div class="shortcut-icon">🏠</div>
+      <span>Home & Kitchen</span>
+    </a>
+    <a routerLink="/products" class="shortcut-card">
+      <div class="shortcut-icon">📚</div>
+      <span>Books</span>
+    </a>
+    <a routerLink="/products" class="shortcut-card">
+      <div class="shortcut-icon">⚽</div>
+      <span>Sports</span>
+    </a>
+    <a routerLink="/products" class="shortcut-card">
+      <div class="shortcut-icon">🧴</div>
+      <span>Beauty</span>
+    </a>
+  </div>
+</div>

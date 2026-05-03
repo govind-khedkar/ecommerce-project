@@ -1,0 +1,134 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  padding: 20px;
+  background-color: #f0f2f5;
+}
+
+.auth-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.auth-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 28px;
+  text-align: center;
+  letter-spacing: -0.3px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 7px;
+  letter-spacing: 0.2px;
+}
+
+.form-group input {
+  padding: 11px 14px;
+  font-size: 14px;
+  border: 1.5px solid #e0e4ef;
+  border-radius: 8px;
+  outline: none;
+  color: #1a1a2e;
+  background-color: #f8f9ff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #4361ee;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+  background-color: white;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4361ee;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+.auth-btn:hover {
+  background-color: #3a56d4;
+  box-shadow: 0 6px 16px rgba(67, 97, 238, 0.3);
+  transform: translateY(-1px);
+}
+
+.auth-btn:active {
+  transform: scale(0.98);
+}
+
+.forgot-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  color: #4361ee;
+  border: 1.5px solid #4361ee;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: none;
+}
+
+.forgot-btn:hover {
+  background-color: #f0f2ff;
+  box-shadow: none;
+}
+
+.forgot-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1.5px solid #f0f2f5;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.forgot-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 13px;
+  color: #8a94a6;
+  margin-top: 20px;
+}
+
+.auth-footer a {
+  color: #4361ee;
+  font-weight: 700;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,139 @@
+.orders-container {
+  max-width: 900px;
+  margin: 36px auto;
+  padding: 0 20px;
+}
+
+.orders-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+.orders-table {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.orders-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 1fr 140px;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f0f2f5;
+  gap: 12px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.orders-row:last-child {
+  border-bottom: none;
+}
+
+.orders-row:not(.header-row):hover {
+  background-color: #f8f9ff;
+}
+
+.header-row {
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 16px 16px 0 0;
+  cursor: default;
+  letter-spacing: 0.3px;
+}
+
+.order-id {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4361ee;
+}
+
+.order-date {
+  font-size: 13px;
+  color: #8a94a6;
+}
+
+.order-amount {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1a1a2e;
+}
+
+.order-payment {
+  font-size: 13px;
+  color: #5a6478;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.order-status {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+}
+
+.order-status.pending {
+  background-color: #fef9e7;
+  color: #d4a017;
+}
+
+.order-status.processing {
+  background-color: #ebf5fb;
+  color: #2e86c1;
+}
+
+.order-status.shipped {
+  background-color: #eafaf1;
+  color: #1e8449;
+}
+
+.order-status.delivered {
+  background-color: #e9f7ef;
+  color: #196f3d;
+}
+
+.order-status.cancelled {
+  background-color: #fdedec;
+  color: #cb4335;
+}
+
+.orders-empty {
+  text-align: center;
+  padding: 70px 20px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.orders-empty p {
+  font-size: 16px;
+  color: #8a94a6;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .orders-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .header-row {
+    display: none;
+  }
+
+  .order-status {
+    justify-self: start;
+  }
+}

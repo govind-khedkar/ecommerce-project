@@ -1,0 +1,36 @@
+<div class="admin-users-container">
+  <h2 class="admin-users-title">All Users</h2>
+
+  <div class="admin-users-table">
+    <div class="admin-users-row header-row">
+      <span>ID</span>
+      <span>Name</span>
+      <span>Email</span>
+      <span>Role</span>
+      <span>Status</span>
+      <span>Action</span>
+    </div>
+
+    <div class="admin-users-row" *ngFor="let user of users">
+      <span class="user-id">#{{user.id}}</span>
+      <span class="user-name">{{user.name}}</span>
+      <span class="user-email">{{user.email}}</span>
+      <span class="user-role" [ngClass]="user.role.toLowerCase()">{{user.role}}</span>
+      <span class="user-status" [ngClass]="user.isLocked ? 'locked' : 'active'">
+        {{user.isLocked ? 'Locked' : 'Active'}}
+      </span>
+      <button
+        *ngIf="user.role !== 'ADMIN'"
+        class="lock-btn"
+        [ngClass]="user.isLocked ? 'unlock' : 'lock'"
+        (click)="toggleLock(user)">
+        {{user.isLocked ? 'Unlock' : 'Lock'}}
+      </button>
+      <span *ngIf="user.role === 'ADMIN'" class="admin-badge">Admin</span>
+    </div>
+  </div>
+
+  <div class="users-empty" *ngIf="users.length === 0">
+    <p>No users found</p>
+  </div>
+</div>

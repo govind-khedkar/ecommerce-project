@@ -1,0 +1,22 @@
+<div class="product-detail" *ngIf="product">
+  <div class="product-detail-image">
+    <img [src]="product.imageUrl" width="200" />
+  </div>
+
+  <div class="product-detail-info">
+    <div class="product-taxonomy">
+      <span>{{product.subCategory?.category?.type?.name}}</span>
+      <span class="taxonomy-separator">›</span>
+      <span>{{product.subCategory?.category?.name}}</span>
+      <span class="taxonomy-separator">›</span>
+      <span>{{product.subCategory?.name}}</span>
+    </div>
+
+    <h2 class="product-detail-name">{{product.name}}</h2>
+    <p class="product-detail-description">{{product.description}}</p>
+    <p class="product-detail-price">{{ product.price | currency:'INR':'symbol':'1.2-2' }}</p>
+    <button class="add-to-cart-btn" *ngIf="isLoggedIn" (click)="addToCart()">Add to Cart</button>
+    <button class="share-btn" (click)="shareProduct()">🔗 Share Product</button>
+    <p class="login-prompt" *ngIf="!isLoggedIn">Please <a routerLink="/login">login</a> to add to cart</p>
+  </div>
+</div>

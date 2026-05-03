@@ -1,0 +1,25 @@
+<div class="orders-container">
+  <h2 class="orders-title">My Orders</h2>
+
+  <div class="orders-table">
+    <div class="orders-row header-row">
+      <span>Order ID</span>
+      <span>Date</span>
+      <span>Amount</span>
+      <span>Payment</span>
+      <span>Status</span>
+    </div>
+
+    <div class="orders-row" *ngFor="let order of orders" [routerLink]="['/orders', order.id]">
+      <span class="order-id">#{{order.id}}</span>
+      <span class="order-date">{{order.createdAt | date:'dd MMM yyyy'}}</span>
+      <span class="order-amount">{{order.totalAmount | currency:'INR':'symbol':'1.2-2'}}</span>
+      <span class="order-payment">{{order.PaymentMethod}}</span>
+      <span class="order-status" [ngClass]="order.status.toLowerCase()">{{order.status}}</span>
+    </div>
+  </div>
+
+  <div class="orders-empty" *ngIf="orders.length === 0">
+    <p>No orders found</p>
+  </div>
+</div>

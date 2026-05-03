@@ -1,0 +1,145 @@
+.manage-container {
+  max-width: 1100px;
+  margin: 36px auto;
+  padding: 0 20px;
+}
+
+.manage-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 28px;
+  letter-spacing: -0.3px;
+}
+
+.manage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.manage-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1.5px solid #f0f2f5;
+}
+
+.manage-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.manage-icon {
+  font-size: 26px;
+}
+
+.manage-card-header h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a5568;
+  letter-spacing: 0.2px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1.5px solid #e0e4ef;
+  border-radius: 8px;
+  outline: none;
+  color: #1a1a2e;
+  background-color: #f8f9ff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #4361ee;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+  background-color: white;
+}
+
+.manage-card button {
+  padding: 11px;
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.1s;
+}
+
+.manage-card button:hover {
+  box-shadow: 0 6px 16px rgba(67, 97, 238, 0.35);
+  transform: translateY(-1px);
+}
+
+.manage-card button:active {
+  transform: scale(0.98);
+}
+
+.manage-list {
+  border-top: 1.5px solid #f0f2f5;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.manage-list h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #8a94a6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.manage-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f0f2ff;
+  color: #4361ee;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.manage-tag-sub {
+  font-size: 11px;
+  color: #8a94a6;
+  background-color: #e8eaf6;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .manage-grid {
+    grid-template-columns: 1fr;
+  }
+}

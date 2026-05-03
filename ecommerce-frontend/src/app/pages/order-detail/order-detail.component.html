@@ -1,0 +1,47 @@
+<div class="order-detail-container" *ngIf="order">
+
+  <div class="order-detail-summary">
+    <h2 class="order-detail-title">Order #{{order.id}}</h2>
+    <div class="order-summary-grid">
+      <div class="summary-item">
+        <span class="summary-label">Total Amount</span>
+        <span class="summary-value blue">{{order.totalAmount | currency:'INR':'symbol':'1.2-2'}}</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Payment Method</span>
+        <span class="summary-value">{{order.paymentMethod}}</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Status</span>
+        <span class="order-status" [ngClass]="order.status.toLowerCase()">{{order.status}}</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Date</span>
+        <span class="summary-value">{{order.createdAt | date:'dd MMM yyyy'}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="order-items">
+    <h3 class="order-items-title">Items Ordered</h3>
+
+    <div class="order-items-table">
+      <div class="order-item-row header-row">
+        <span>Product</span>
+        <span>Name</span>
+        <span>Qty</span>
+        <span>Price</span>
+        <span>Subtotal</span>
+      </div>
+
+      <div class="order-item-row" *ngFor="let item of order?.items">
+        <img [src]="item.product.imageUrl" class="order-item-image">
+        <span class="order-item-name" [routerLink]="['/product', item.product.id]">{{item.product.name}}</span>
+        <span class="order-item-qty">{{item.quantity}}</span>
+        <span class="order-item-price">{{item.priceAtTime | currency:'INR':'symbol':'1.2-2'}}</span>
+        <span class="order-item-subtotal">{{item.quantity * item.priceAtTime | currency:'INR':'symbol':'1.2-2'}}</span>
+      </div>
+    </div>
+  </div>
+
+</div>

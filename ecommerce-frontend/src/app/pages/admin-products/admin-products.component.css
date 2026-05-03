@@ -1,0 +1,128 @@
+.admin-products-container {
+  max-width: 1100px;
+  margin: 36px auto;
+  padding: 0 20px;
+}
+
+.admin-products-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+.admin-product-table {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.admin-product-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 160px 200px;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f0f2f5;
+  gap: 16px;
+  transition: background-color 0.15s;
+}
+
+.admin-product-row:last-child {
+  border-bottom: none;
+}
+
+.admin-product-row:not(.header-row):hover {
+  background-color: #f8f9ff;
+}
+
+.header-row {
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 16px 16px 0 0;
+  letter-spacing: 0.3px;
+}
+
+.admin-product-image {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 10px;
+  background-color: #f8f9ff;
+  padding: 6px;
+}
+
+.admin-product-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.admin-product-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: #4361ee;
+}
+
+.admin-product-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn {
+  padding: 8px 18px;
+  background-color: #4361ee;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.edit-btn:hover {
+  background-color: #3a56d4;
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+}
+
+.delete-btn {
+  padding: 8px 18px;
+  background-color: white;
+  color: #e53e3e;
+  border: 1.5px solid #e53e3e;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: none;
+}
+
+.delete-btn:hover {
+  background-color: #e53e3e;
+  color: white;
+  box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+}
+
+@media (max-width: 600px) {
+  .admin-product-row {
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .admin-product-price {
+    grid-column: 2;
+  }
+
+  .admin-product-actions {
+    grid-column: 1 / -1;
+  }
+
+  .header-row {
+    display: none;
+  }
+}
