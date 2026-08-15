@@ -1,5 +1,21 @@
 # E-Commerce Project
 
+## Application Screenshots
+
+### Home Page
+![Home Page](./screenshots/homePage.png)
+
+### Products Page
+![Products Page](./screenshots/productPage.png)
+
+### Cart Page
+![Cart Page](./screenshots/cartPage.png)
+
+### Login Page
+![Login Page](./screenshots/loginPage.png)
+
+---
+
 ## How to Run (Production - Single Server)
 
 cd ecommerce-backend
