@@ -52,7 +52,7 @@ Password: 123456
 All customers have password: 123456
 
 | ID | Name   | Email           | Status |
-|----|--------|-----------------|--------|
+|----|--------|--------|--------|
 | 1  | Govind | govind@test.com | Active |
 | 2  | Rahul  | rahul@test.com  | Active |
 | 3  | Amit   | amit@test.com   | Active |
@@ -64,6 +64,7 @@ All customers have password: 123456
 ---
 
 ## Notes
+
 - Database file is included. Admin and customer users are already seeded.
 - Angular build is already copied to ecommerce-backend/public/
 - For production just run backend and open http://localhost:3000
